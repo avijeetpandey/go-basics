@@ -44,5 +44,11 @@ func main() {
 		},
 	}
 
-	fmt.Println(jim)
+	jim.print()
+}
+
+func (p personWithContact) print() {
+	fmt.Printf("Full Name => %v", p.firstName+" "+p.lastName)
+	fmt.Printf("Email => %v", p.contact.email)
+	fmt.Printf("Zip Code => %d", p.contact.zip)
 }
