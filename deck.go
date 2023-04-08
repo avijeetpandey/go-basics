@@ -3,8 +3,10 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 // a type to represent Deck of cards
@@ -60,4 +62,16 @@ func newDeckFromFile(filename string) deck {
 	stringSlice := strings.Split(string(bs), ",")
 
 	return deck(stringSlice)
+}
+
+// function to shuffle the deck of cards
+func (d deck) shuffle() {
+
+	source := rand.NewSource(time.Now().Unix())
+	r := rand.New(source)
+
+	for i := range d {
+		newPosition := r.Intn(len(d) - 1)
+		d[i], d[newPosition] = d[newPosition], d[i]
+	}
 }
