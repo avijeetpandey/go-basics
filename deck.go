@@ -26,3 +26,8 @@ func (d deck) print() {
 		fmt.Println(index, card)
 	}
 }
+
+// function to return the two seperate slices
+func deal(d deck, handSize int) (deck, deck) {
+	return d[:handSize], d[handSize:]
+}
