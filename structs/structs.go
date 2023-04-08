@@ -1,10 +1,23 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
+type contactInfo struct {
+	email string
+	zip   int
+}
 
 type person struct {
 	firstName string
 	lastName  string
+}
+
+type personWithContact struct {
+	firstName string
+	lastName  string
+	contact   contactInfo
 }
 
 func main() {
@@ -16,4 +29,20 @@ func main() {
 
 	fmt.Println(alex)
 	fmt.Println(amy)
+
+	//  struct contains zero values if left un-assigned
+	var aiko person
+	fmt.Println(aiko)
+
+	// creating person with contactInfo
+	jim := personWithContact{
+		firstName: "Jim",
+		lastName:  "Kick",
+		contact: contactInfo{
+			email: "test@g.cc",
+			zip:   122002,
+		},
+	}
+
+	fmt.Println(jim)
 }
