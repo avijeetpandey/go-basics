@@ -24,4 +24,17 @@ func main() {
 	fmt.Println(emptyColorsMap)
 	fmt.Println(madeColorsMap)
 	fmt.Println(colors)
+
+	// creating an int map
+	ageAndNameMap := map[int]string{
+		12: "Andy",
+		13: "Aman",
+	}
+
+	fmt.Println(ageAndNameMap)
+
+	delete(ageAndNameMap, 12)
+
+	fmt.Println(ageAndNameMap)
+
 }
