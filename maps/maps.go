@@ -37,4 +37,12 @@ func main() {
 
 	fmt.Println(ageAndNameMap)
 
+	printKeys(colors)
+
+}
+
+func printKeys(m map[string]string) {
+	for color, hex := range m {
+		fmt.Println(color, hex)
+	}
 }
